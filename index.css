@@ -77,3 +77,21 @@
     border: 2px solid rgb(212, 0, 255);
     padding: 0 1rem;
 }
+
+.winscore {
+    padding: 2rem 0;
+}
+
+.winscoreuser1 {
+    background: black;
+    padding: 1rem 1rem;
+    color: red;
+    font-size: 1.5rem;
+}
+
+.winscoreuser2 {
+    background: black;
+    padding: 1rem 1rem;
+    color: red;
+    font-size: 1.5rem;
+}

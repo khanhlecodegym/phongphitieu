@@ -49,10 +49,14 @@ adduser1.addEventListener('click', function () {
     //set default
     scoreuser1.value = 0;
 
+    // adduser2.removeAttribute("disabled");
+    // adduser1.disabled = true;
+
     // Check Win
     let winScore = +winscoreuser1.textContent;
     let nameWin = nameuser1.textContent;
     checkWin(winScore, nameWin);
+    
 });
 
 adduser2.addEventListener('click', function () {
@@ -75,6 +79,9 @@ adduser2.addEventListener('click', function () {
     luotphonguser2.innerHTML = luotuser2;
     //set default
     scoreuser2.value = 0;
+
+    // adduser1.removeAttribute("disabled");
+    // adduser2.disabled = true;
 
     // Check Win
     let winScore = +winscoreuser2.textContent;
@@ -133,6 +140,10 @@ function checkWin(winScore, nameWin) {
 
             winscoreuser1.innerHTML = '180';
             winscoreuser2.innerHTML = '180';
+
+            // adduser2.disabled = false;
+            // adduser1.disabled = false;
+
             again = false;
         }
     }
@@ -152,6 +163,9 @@ function nextmatch() {
 
         winscoreuser1.innerHTML = '180';
         winscoreuser2.innerHTML = '180';
+
+        // adduser2.disabled = false;
+        // adduser1.disabled = false;
         again = false;
     }
 }
