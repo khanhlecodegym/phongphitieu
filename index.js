@@ -56,7 +56,7 @@ adduser1.addEventListener('click', function () {
     let winScore = +winscoreuser1.textContent;
     let nameWin = nameuser1.textContent;
     checkWin(winScore, nameWin);
-    
+
 });
 
 adduser2.addEventListener('click', function () {
@@ -117,6 +117,7 @@ function setScoreUser(score, sumscore, currentScore) {
 
 function checkWin(winScore, nameWin) {
     if (winScore == 0) {
+        document.querySelector(".luotphonguser2").disabled = false;
         if (user1) {
             let score = +document.querySelector(".user1").innerHTML;
             document.querySelector(".user1").innerHTML = ++score;
@@ -125,27 +126,29 @@ function checkWin(winScore, nameWin) {
             document.querySelector(".user2").innerHTML = ++score;
         }
 
-        alert(`Chúc mưng ${nameWin} là người chiến thắng`)
+        setTimeout(() => {
+            alert(`Chúc mừng ${nameWin} là người chiến thắng ván này`)
 
-        again = confirm('Sãn sàng chơi ván mới chưa');
+            again = confirm('Sãn sàng chơi ván mới chưa');
 
-        if (again) {
-            scoreuser1.value = 0;
-            scoreuser2.value = 0;
-            kquser1.innerHTML = '';
-            kquser2.innerHTML = '';
+            if (again) {
+                scoreuser1.value = 0;
+                scoreuser2.value = 0;
+                kquser1.innerHTML = '';
+                kquser2.innerHTML = '';
 
-            luotphonguser1.innerHTML = '1';
-            luotphonguser2.innerHTML = '1';
+                luotphonguser1.innerHTML = '1';
+                luotphonguser2.innerHTML = '1';
 
-            winscoreuser1.innerHTML = '180';
-            winscoreuser2.innerHTML = '180';
+                winscoreuser1.innerHTML = '180';
+                winscoreuser2.innerHTML = '180';
 
-            // adduser2.disabled = false;
-            // adduser1.disabled = false;
-
-            again = false;
-        }
+                // adduser2.disabled = false;
+                // adduser1.disabled = false;
+                document.querySelector(".luotphonguser2").disabled = true;
+                again = false;
+            }
+        }, 800);
     }
 }
 
@@ -166,6 +169,7 @@ function nextmatch() {
 
         // adduser2.disabled = false;
         // adduser1.disabled = false;
+        document.querySelector(".luotphonguser2").disabled = true;
         again = false;
     }
 }
